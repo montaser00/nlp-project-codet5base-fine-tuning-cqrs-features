@@ -1,0 +1,10 @@
+torch
+transformers
+tokenizers
+peft
+bitsandbytes
+datasets
+evaluate
+sacrebleu
+accelerate
+sentencepiece
