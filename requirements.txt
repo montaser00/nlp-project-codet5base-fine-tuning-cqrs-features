@@ -1,4 +1,6 @@
-torch
+torch==2.8.0
+torchvision
+torchaudio
 transformers
 tokenizers
 peft
@@ -8,3 +10,5 @@ evaluate
 sacrebleu
 accelerate
 sentencepiece
+codebleu==0.7.0
+tree-sitter-c-sharp==0.21.3

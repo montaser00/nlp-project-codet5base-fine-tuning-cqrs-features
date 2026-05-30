@@ -6,6 +6,8 @@ Fine-tuning [Salesforce/codet5p-770m](https://huggingface.co/Salesforce/codet5p-
 
 📄 [See Model Card](./MODEL_CARD.md)
 
+📄 [See Data Card](./DATA_CARD.md)
+
 ---
 
 ## Quick Start
@@ -23,9 +25,9 @@ bash setup.sh
 ### 1. Prepare the Environment
 
 ```bash
-python -m venv venv
+py -3.12 -m venv venv
 ./venv/Scripts/activate
-python -m pip install -r requirements.txt
+py -m pip install --no-cache-dir --trusted-host pypi.org --trusted-host files.pythonhosted.org -r requirements.txt
 pip install -U huggingface_hub
 hf download Salesforce/codet5p-770m --local-dir ./content/codet5p-770m
 ```
@@ -33,7 +35,7 @@ hf download Salesforce/codet5p-770m --local-dir ./content/codet5p-770m
 ### 2. Run Model Fine-Tuning
 
 ```bash
-python .\src\features\train\codet5-fine-tuning.py
+py .\src\features\train\codet5-fine-tuning.py
 ```
 
 ### 3. Run the Notebooks
@@ -60,14 +62,19 @@ nlp-project-codet5base-fine-tuning-cqrs-features/
 │   ├── codet5p-770m/
 │   ├── generated/
 │   │   ├── base/
-│   │   └── fine-tuned/
+│   │   │── fine-tuned/
+│   │   └── inference/
 │   ├── output/
 │   ├── training_data.json
 │   └── validation_data.json
 ├── src/
 │   ├── features/
-│   │   └── train/
-│   │       └── codet5-fine-tuning.py
+│   │   │── train/
+│   │   │   └── codet5-fine-tuning.py
+│   │   │── evaluate/
+│   │   │   └──codet5p-770m-evaluate.py
+│   │   └── inference/
+│   │       └──codet5p-770m-inference.py
 │   └── notebooks/
 │       ├── codet5p-770m.ipynb
 │       └── codet5p-770m-fine-tuned.ipynb
